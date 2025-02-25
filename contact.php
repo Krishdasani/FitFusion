@@ -111,7 +111,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="health.php">Health</a></li>
                     <li><a href="gp_near_me.php">GP Near Me</a></li>
                     <li><a href="recreational_places.php">Recreational Places</a></li>
