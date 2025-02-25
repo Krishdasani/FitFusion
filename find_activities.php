@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Activities Near You - International Students in the UK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f8ff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            height: 70px;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        
+        .results-section,
+        #map {
+            flex: 1;
+            margin: 20px;
+            padding: 20px;
+            /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+            /* background-color: #fff; */
+        }
+
+        .form-section {
+            text-align: center;
+        }
+
+        .form-section h2 {
+            color: #00796b;
+        }
+
+        .form-section input[type="text"],
+        .form-section select
+        {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-section input[type="submit"] {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #00796b;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .form-section input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p,
+        footer a {
+            color: #00796b;
+            text-decoration: none;
+        }
+
+        .banner {
+            width: 100%;
+            /* Set the container width */
+            height: 650px;
+            /* Set a fixed height */
+            background: url('images/activities.jpeg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .banner h1 {
+            padding-top: 20px;
+            /* Adjust padding to vertically center the text */
+            font-size: 2.5em;
+            margin: 0;
+            color: black;
+        }
+
+        .banner p {
+            margin: 20px 0 0;
+        }
+        .paragraph {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 40px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            width: 60%;
+            border: 1px solid black;
+            
+        }
+ 
+    </style>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpinMhCh3CaS9IGLf51agcLhxtzOKkNA0&libraries=places"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.querySelector('input[type="submit"]');
+
+            const mapArea = document.getElementById('map');
+
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const postcode = document.getElementById('postcode').value;
+                const activityType = document.getElementById('activityType').value;
+                findActivities(postcode, activityType);
+            });
+
+            function initMap(location) {
+                const map = new google.maps.Map(mapArea, {
+                    center: location,
+                    zoom: 14
+                });
+                return map;
+            }
+
+            function findActivities(postcode, activityType) {
+                const geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': postcode }, function (results, status) {
+                    if (status === 'OK') {
+                        const location = results[0].geometry.location;
+                        const map = initMap(location);
+                        const service = new google.maps.places.PlacesService(map);
+                        service.nearbySearch({
+                            location: location,
+                            radius: 3000,
+                            keyword: activityType
+                        }, function (results, status) {
+                            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                                displayResults(results, map);
+                            } else {
+                                displayError('No activities found near this location.');
+                            }
+                        });
+                    } else {
+                        displayError('Please enter a valid postcode');
+                    }
+                });
+            }
+
+            function displayResults(places, map) {
+                const resultsSection = document.getElementById('results');
+                resultsSection.innerHTML = '';
+                places.forEach(place => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.innerHTML = `<h3>${place.name}</h3><p>${place.vicinity}</p>`;
+                    resultsSection.appendChild(resultDiv);
+
+                    new google.maps.Marker({
+                        position: place.geometry.location,
+                        map: map,
+                        title: place.name
+                    });
+                });
+            }
+
+            function displayError(message) {
+                const resultsSection = document.getElementById('results');
+                resultsSection.innerHTML = `<p>${message}</p>`;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.php" class="logo"><img src="images/logo.png" alt="Fitfusion Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="health.php">Health</a></li>
+                    <li><a href="gp_near_me.php">GP Near Me</a></li>
+                    <li><a href="recreational_places.php">Recreational Places</a></li>
+                    <li><a href="resources.php">Resource Hub</a></li>
+                    <li><a href="events.php">Events</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="banner">
+
+                <h1>Find Activities Near You</h1>
+            </section>
+            <center><section class='paragraph'>
+<p>
+Welcome to the Activity Finder! Enter your postcode and select an activity gym, yoga, calisthenics, or Pilates to find the best spots near you. Stay active and discover new places right in your neighbourhood!
+</p>
+    </section></center>
+            <section class="form-section">
+                    <form id="activityForm">
+                        <h2>Enter Your Postcode and Select an Activity</h2>
+                        <input type="text" id="postcode" name="postcode" placeholder="Enter Postcode" required>
+                        <select id="activityType" name="activityType">
+                            <option value="Gym">Gym</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Calisthenics">Calisthenics</option>
+                            <option value="Pilates">Pilates</option>
+                        </select>
+                       <input type="submit" value="FIND ACTIVITES"> 
+                    </form>
+                </section>
+            <div class="content-section">
+               
+                <section id="results" class="results-section">
+                    <!-- Activity results will be displayed here -->
+                </section>
+                <section id="map" style="height: 400px;"></section>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 International Students in the UK. All rights reserved.</p>
+            <p><a href="#">Contact</a></p>
+        </footer>
+    </div>
+    <script>
+        // Script to handle the tab functionality, fetch data, and populate maps already included in the head section.
+    </script>

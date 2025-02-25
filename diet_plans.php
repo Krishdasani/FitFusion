@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Indian Diet Plan - International Students in the UK</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100vw;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f8ff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo img {
+            height: 70px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav li {
+            margin: 0 15px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .banner {
+            text-align: center;
+            background-color: #e0f7fa;
+        }
+        .banner img {
+            width: 100%;
+        }
+        .banner h1 {
+            font-size: 2.5em;
+            color: #00796b;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 10px 5px 0px 0px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .tab:hover, .tab.active {
+            background-color: #004d40;
+        }
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: none;
+            background-color: #fff;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .form-section {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-field {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .form-field label {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .form-field input, .form-field select {
+            flex: 8;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section button {
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-section button:hover {
+            background-color: #004d40;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        footer a {
+            color: #00796b;
+            text-decoration: none;
+        }
+        .results-section {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        #Exercise {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .exercise-card {
+            flex: 1 0 48%;
+            max-width: 48%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .exercise-video {
+            background-color: #e0ffff;
+        }
+        iframe, .exercise-card img {
+            width: 100%;
+            height: 340px;
+            border: none;
+        }
+        .banner {
+            width: 100%;
+            height: 650px;
+            background: url('images/Workout&Diet.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+        .banner h1 {
+            padding-top: 280px;
+            font-size: 2.5em;
+            margin: 0;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="health.php">Health</a></li>
+                    <li><a href="gp_near_me.php">GP Near Me</a></li>
+                    <li><a href="recreational_places.php">Recreational Places</a></li>
+                    <li><a href="resources.php">Resource Hub</a></li>
+                    <li><a href="events.php">Events</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="banner">
+                <!-- Banner content here -->
+            </section>
+            <div class="tabs">
+                <div class="tab active" data-tab="Diet" onclick="openTab(event, 'Diet')">Diet Plan</div>
+                <div class="tab" data-tab="Exercise" onclick="openTab(event, 'Exercise')">Home Exercise</div>
+            </div>
+            <section id="Diet" class="tab-content active">
+                <form id="dietForm" class="form-section">
+                    <div class="form-field">
+                        <label for="weight" class="font-medium text-gray-700">Current Weight (kg):</label>
+                        <input type="number" id="weight" class="input" required placeholder="Weight in kg">
+                    </div>
+                    <div class="form-field">
+                        <label for="target_weight" class="font-medium text-gray-700">Target Weight (kg):</label>
+                        <input type="number" id="target_weight" class="input" required placeholder="Target Weight in kg">
+                    </div>
+                    <div class="form-field">
+                        <label for="height" class="font-medium text-gray-700">Height (cm):</label>
+                        <input type="number" id="height" class="input" required placeholder="Height in cm">
+                    </div>
+                    <div class="form-field">
+                        <label for="age" class="font-medium text-gray-700">Age:</label>
+                        <input type="number" id="age" class="input" required placeholder="Age">
+                    </div>
+                    <div class="form-field">
+                        <label for="gender" class="font-medium text-gray-700">Gender:</label>
+                        <select id="gender" class="input" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="activity_level" class="font-medium text-gray-700">Activity Level:</label>
+                        <select id="activity_level" class="input" required>
+                            <option value="1.2">Sedentary</option>
+                            <option value="1.375">Lightly active</option>
+                            <option value="1.55">Moderately active</option>
+                            <option value="1.725">Very active</option>
+                            <option value="1.9">Extra active</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="dietary_preference" class="font-medium text-gray-700">Dietary Preference:</label>
+                        <select id="dietary_preference" class="input" required>
+                            <option value="omnivore">Non Vegetarian</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="pescatarian">Pescatarian</option>
+                        </select>
+                    </div>
+                    <button type="button" id="generatePlanButton" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Generate Diet Plan</button>
+                </form>
+                <div id="results" class="results-section">
+                    <!-- Calorie calculation and diet results will be displayed here in a table format -->
+                </div>
+            </section>
+            <section id="Exercise" class="tab-content">
+                <div class="exercise-card">
+                    <h3 class="exercise-title">FULL BODY WORKOUT</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/wIynl3at0Rs?si=1wS45CzPeKgVjyQL" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">Fat Burning HIIT Workout - Full body Cardio</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/-hSma-BRzoo?si=lEMk4sc5gXiXU1gQ" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">YOGA & STRETCH</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/FtVilR7Cv_g?si=xIwXFaOWA2uInwq5H" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">FULL BODY WORKOUT FOR BEGINNERS</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/iCQ2gC4DqJw?si=kdN0tyiW-BnfOFeA" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">Full Body Strength Workout</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/9FBIaqr7TjQ?si=Ph9C_1PKlA64WPY-" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">Pilates for Beginners</h3>
+                    <iframe class="exercise-video" src="https://www.youtube.com/embed/ljJ1ShuzI5o?si=btTOH_7lgNo5oLL8" allowfullscreen></iframe>
+                </div>
+                <div class="exercise-card">
+                    <h3 class="exercise-title">NHS for Wellness</h3>
+                    <a href="https://www.youtube.com/@NHS/videos"><img src="images/channels4_banner.jpg" alt="NHS Wellness"></a>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>© 2024 International Students in the UK. All rights reserved.</p>
+            <p><a href="contact.php">Contact</a></p>
+        </footer>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(evt) {
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(t => t.style.display = 'none');
+            tabs.forEach(t => t.classList.remove('active'));
+            document.getElementById(tab.dataset.tab).style.display = 'block';
+            tab.classList.add('active');
+        });
+    });
+
+    document.getElementById('generatePlanButton').addEventListener('click', async function() {
+        await calculateDietPlan();
+    });
+});
+
+async function calculateDietPlan() {
+    const weight = parseFloat(document.getElementById('weight').value);
+    const targetWeight = parseFloat(document.getElementById('target_weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const age = parseInt(document.getElementById('age').value);
+    const gender = document.getElementById('gender').value;
+    const activityLevel = parseFloat(document.getElementById('activity_level').value);
+    const dietaryPreference = document.getElementById('dietary_preference').value;
+
+    const bmr = gender === 'Male' 
+        ? 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age)
+        : 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+
+    const tdee = bmr * activityLevel;
+    const dailyCaloricIntakeGoal = tdee - (3500 * (weight - targetWeight) / 30);
+
+    const meals = await fetchMeals(dietaryPreference);
+    const filteredMeals = filterMeals(meals, dietaryPreference);
+    const mealPlan = planMeals(filteredMeals, dailyCaloricIntakeGoal);
+    displayResults(gender, height, age, bmr, tdee, dailyCaloricIntakeGoal);
+    displayMeals(mealPlan, dailyCaloricIntakeGoal);
+}
+
+function displayResults(gender, height, age, bmr, tdee, dailyCaloricIntakeGoal) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = `
+        <h2>Calorie Calculation Results</h2>
+        <table>
+            <tr><td>Gender</td><td>${gender}</td></tr>
+            <tr><td>Height</td><td>${height} cm</td></tr>
+            <tr><td>Age</td><td>${age} years</td></tr>
+            <tr><td>Basal Metabolic Rate (BMR)</td><td>${bmr.toFixed(2)} kcal/day</td></tr>
+            <tr><td>Total Daily Energy Expenditure (TDEE)</td><td>${tdee.toFixed(2)} kcal/day</td></tr>
+            <tr><td>Calories to reach goal weight</td><td>${dailyCaloricIntakeGoal.toFixed(2)} kcal/day</td></tr>
+        </table>
+    `;
+    resultsDiv.style.display = 'block';
+}
+
+async function fetchMeals(dietaryPreference) {
+    let allMeals = [];
+    const keywords = encodeURIComponent("Indian");
+
+    let url = `https://api.edamam.com/search?q=${keywords}&app_id=3151653f&app_key=473dbc5aa285d64d93355e116c7a20d2`;
+
+    if (dietaryPreference !== 'omnivore') {
+        const healthLabel = dietaryPreference === 'vegetarian' ? 'vegetarian' : dietaryPreference;
+        url += `&health=${healthLabel}`;
+    }
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!data.hits || data.hits.length === 0) {
+            throw new Error('No recipes found or incorrect API response structure.');
+        }
+
+        allMeals = data.hits.map(hit => hit.recipe);
+    } catch (error) {
+        console.error('Error fetching meals:', error);
+        displayError('Failed to fetch meals. ' + error.message);
+    }
+    return allMeals;
+}
+
+function filterMeals(meals, dietaryPreference) {
+    if (dietaryPreference === 'omnivore') {
+        return meals;
+    }
+    return meals.filter(meal => {
+        if (dietaryPreference === 'vegetarian') {
+            return !meal.ingredientLines.some(line => line.toLowerCase().includes('egg'));
+        }
+        return true;
+    });
+}
+
+function planMeals(meals, calorieTarget) {
+    let bestPlannedMeals = [];
+    let bestCalories = 0;
+    const mealNames = ["Breakfast", "Lunch", "Dinner"];
+    let maxIterations = 100000; // Safeguard to prevent infinite loops
+    let iterationCount = 0;
+    let closestDifference = Infinity;
+
+    // Function to calculate the absolute difference to the target
+    const calculateDifference = (currentCalories) => Math.abs(currentCalories - calorieTarget);
+
+    // Calculate the maximum calories a single meal can have
+    const maxMealCalories = calorieTarget * 0.7;
+
+    while (iterationCount < maxIterations) {
+        let plannedMeals = [];
+        let currentCalories = 0;
+        let mealTypesUsed = { 'Breakfast': false, 'Lunch': false, 'Dinner': false };
+
+        // Shuffle the meals array to ensure randomness in each iteration
+        meals.sort(() => Math.random() - 0.5);
+
+        // Assign one meal to each meal type to ensure all categories are filled
+        mealNames.forEach(mealType => {
+            if (meals.length > 0 && !mealTypesUsed[mealType]) {
+                let mealIndex = meals.findIndex(meal => 
+                    meal.calories <= calorieTarget - currentCalories && meal.calories <= maxMealCalories
+                );
+                if (mealIndex !== -1) {
+                    let meal = meals[mealIndex];
+                    meal.mealType = mealType;
+                    plannedMeals.push(meal);
+                    currentCalories += meal.calories;
+                    mealTypesUsed[mealType] = true;
+                    meals.splice(mealIndex, 1); // Remove selected meal to avoid repetition
+                }
+            }
+        });
+
+        // Try to add a fourth meal if needed
+        if (currentCalories < calorieTarget) {
+            let requiredCalories = calorieTarget - currentCalories;
+            let mealIndex = meals.findIndex(meal => 
+                Math.abs(meal.calories - requiredCalories) <= requiredCalories * 0.05 &&
+                meal.calories <= maxMealCalories
+            );
+            if (mealIndex !== -1) {
+                let meal = meals[mealIndex];
+                let leastCaloricMealType = mealNames.reduce((a, b) => {
+                    let sumA = plannedMeals.filter(m => m.mealType === a).reduce((sum, m) => sum + m.calories, 0);
+                    let sumB = plannedMeals.filter(m => m.mealType === b).reduce((sum, m) => sum + m.calories, 0);
+                    return sumA < sumB ? a : b;
+                });
+                meal.mealType = leastCaloricMealType;
+                plannedMeals.push(meal);
+                currentCalories += meal.calories;
+            }
+        }
+
+        // Check if the current plan is the closest to the target
+        let currentDifference = calculateDifference(currentCalories);
+        if (currentDifference < closestDifference) {
+            closestDifference = currentDifference;
+            bestPlannedMeals = plannedMeals;
+            bestCalories = currentCalories;
+        }
+
+        iterationCount++;
+    }
+
+    // Log the best result
+    console.log(`Best match total calories: ${bestCalories} kcal`);
+    console.log(`Planned Meals:`, bestPlannedMeals);
+    return bestPlannedMeals;
+}
+
+
+
+
+
+
+
+function displayMeals(meals, calorieTarget) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML += '<h2>Planned Meals</h2>';
+    resultsDiv.style.display = 'block';
+
+    let totalCalories = 0;
+
+    let mealGroups = {
+        'Breakfast': [],
+        'Lunch': [],
+        'Dinner': []
+    };
+
+    meals.forEach(meal => {
+        if (meal && meal.mealType) {
+            mealGroups[meal.mealType].push(meal);
+            totalCalories += meal.calories;
+        }
+    });
+
+    Object.keys(mealGroups).forEach(type => {
+        if (mealGroups[type].length > 0) {
+            resultsDiv.innerHTML += `<h3>${type}</h3>`;
+            mealGroups[type].forEach(meal => {
+                const calories = meal.calories;
+                resultsDiv.innerHTML += `
+                    <div class="meal-option">
+                        <p>${meal.label} - ${calories.toFixed(0)} kcal</p>
+                        <a href="${meal.url}" target="_blank">View Recipe</a>
+                    </div>
+                `;
+            });
+        }
+    });
+
+    resultsDiv.innerHTML += `<p><strong>Total Calories:</strong> ${totalCalories} kcal</p>`;
+
+    // Warn if the total calories don't match the target
+    
+}
+
+
+function displayMeals(meals, calorieTarget) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML += '<h2>Planned Meals</h2>';
+    resultsDiv.style.display = 'block';
+
+    let totalCalories = 0;
+
+    let mealGroups = {
+        'Breakfast': [],
+        'Lunch': [],
+        'Dinner': []
+    };
+
+    meals.forEach(meal => {
+        if (meal && meal.mealType) {
+            mealGroups[meal.mealType].push(meal);
+            totalCalories += meal.calories;
+        }
+    });
+
+    Object.keys(mealGroups).forEach(type => {
+        if (mealGroups[type].length > 0) {
+            resultsDiv.innerHTML += `<h3>${type}</h3>`;
+            mealGroups[type].forEach(meal => {
+                const calories = meal.calories;
+                resultsDiv.innerHTML += `
+                    <div class="meal-option">
+                        <p>${meal.label} - ${calories.toFixed(0)} kcal</p>
+                        <a href="${meal.url}" target="_blank">View Recipe</a>
+                    </div>
+                `;
+            });
+        }
+    });
+
+    resultsDiv.innerHTML += `<p><strong>Total Calories:</strong> ${totalCalories} kcal</p>`;
+
+    // Warn if the total calories don't match the target
+    
+}
+
+
+
+
+function getRandomMeal(meals) {
+    const randomIndex = Math.floor(Math.random() * meals.length);
+    return meals[randomIndex];
+}
+
+function displayMeals(meals, calorieTarget) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML += '<h2>Planned Meals</h2>';
+    resultsDiv.style.display = 'block';
+
+    let totalCalories = 0;
+
+    let mealGroups = {
+        'Breakfast': [],
+        'Lunch': [],
+        'Dinner': []
+    };
+
+    meals.forEach(meal => {
+        if (meal && meal.mealType) {
+            mealGroups[meal.mealType].push(meal);
+            totalCalories += meal.calories;
+        }
+    });
+
+    Object.keys(mealGroups).forEach(type => {
+        if (mealGroups[type].length > 0) {
+            resultsDiv.innerHTML += `<h3>${type}</h3>`;
+            mealGroups[type].forEach(meal => {
+                const calories = meal.calories;
+                resultsDiv.innerHTML += `
+                    <div class="meal-option">
+                        <p>${meal.label} - ${calories.toFixed(0)} kcal</p>
+                        <a href="${meal.url}" target="_blank">View Recipe</a>
+                    </div>
+                `;
+            });
+        }
+    });
+
+    resultsDiv.innerHTML += `<p><strong>Total Calories:</strong> ${totalCalories.toFixed(0)} kcal</p>`;
+
+    
+}
+
+
+function displayError(message) {
+    const resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML += `<p>${message}</p>`;
+    resultsDiv.style.display = 'block';
+}
+    
+    </script>
+</body>
+</html>
